@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="小记：刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程此篇记录内容包括：    安装VMware        创建虚拟机    虚拟机上Ubantu系统的安装 详见下文：">
+<meta name="keywords" content="Linux,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows下使用VMware安装Ubantu虚拟机实操记录">
+<meta property="og:url" content="http://yoursite.com/2019/04/13/VMware/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="小记：刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程此篇记录内容包括：    安装VMware        创建虚拟机    虚拟机上Ubantu系统的安装 详见下文：">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/download1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/download2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/download3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/VMwareInstall1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/VMwareInstall2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/VMwareInstall3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/over.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create5.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create6.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create7.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create8.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create9.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create10.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create11.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create12.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create13.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create14.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/create15.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last1.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last3.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last5.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/13/VMware/VMware/last6.png">
+<meta property="og:updated_time" content="2019-04-13T09:09:17.084Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows下使用VMware安装Ubantu虚拟机实操记录">
+<meta name="twitter:description" content="小记：刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程此篇记录内容包括：    安装VMware        创建虚拟机    虚拟机上Ubantu系统的安装 详见下文：">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/13/VMware/VMware/download1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/13/VMware/">
+
+
+
+
+
+  <title>Windows下使用VMware安装Ubantu虚拟机实操记录 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/ccancle" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/VMware/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Windows下使用VMware安装Ubantu虚拟机实操记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T17:04:02+08:00">
+                2019-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="小记："><a href="#小记：" class="headerlink" title="小记："></a>小记：</h2><p>刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程<br>此篇记录内容包括：</p>
+<p>   安装VMware    </p>
+<p>   创建虚拟机</p>
+<p>   虚拟机上Ubantu系统的安装</p>
+<p>详见下文：<br><a id="more"></a></p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>windows操作系统物理机<br>VMware Workstation 软件（可以在网上下载）<br>Ubantu-14.04.6镜像文件（其他版本都大同小异，这里以Ubantu14.04为例）<br>另外一点外网原因可能网站上下载的有些慢 提供一下我的下载地址,还是蛮快的:<br><a href="http://mirrors.aliyun.com/ubuntu-releases/14.04/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu-releases/14.04/</a><br>里面有各种不同的版本   </p>
+<h2 id="虚拟机的下载："><a href="#虚拟机的下载：" class="headerlink" title="虚拟机的下载："></a>虚拟机的下载：</h2><p>1.进入<a href="https://www.vmware.com/cn.html" target="_blank" rel="noopener">VMware</a>官网，点击下载，再点击图中标记的Workstation Pro，如下图所示。<br>  <img src="VMware/download1.png" alt="下载1"><br>2.根据操作系统选择合适的产品，在这里以Windows系统为例，点击转至下载，如下图所示<br>  <img src="VMware/download2.jpg" alt="下载2"><br>3.在1处可以选择版本，默认为最新版本。选择好版本后点击立即下载，下载速度很慢的话，建议科学上网一下。<br>  <img src="VMware/download3.png" alt="下载3"></p>
+<h2 id="虚拟机的安装："><a href="#虚拟机的安装：" class="headerlink" title="虚拟机的安装："></a>虚拟机的安装：</h2><p>1.打开.exe文件， 即可开始安装。<br>(因为我已经安装过了所以此处选了一个文件包里的汉化版进行演示，还是建议选用原版)<br>  <img src="VMware/VMwareInstall1.png" alt="安装1"><br> 2.安装位置默认在C盘下，在这里我选择安装在F盘，安装路径尽量不要有中文。<br>  <img src="VMware/VMwareInstall2.png" alt="安装2"><br>3.等待安装就好了。   </p>
+<p>4.安装成功后，第一次运行程序会让输入密钥，这个自己百度，分享一下我搜的密钥 有能用的可以用一下：<br>CG54H-D8D0H-H8DHY-C6X7X-N2KG6<br>ZC3WK-AFXEK-488JP-A7MQX-XL8YF<br>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4<br>ZC5XK-A6E0M-080XQ-04ZZG-YF08D<br>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8<br>FF590-2DX83-M81LZ-XDM7E-MKUT4<br>FF31K-AHZD1-H8ETZ-8WWEZ-WUUVA<br>CV7T2-6WY5Q-48EWP-ZXY7X-QGUWD<br>AALYG-20HVE-WHQ13-67MUP-XVMF3<br><img src="VMware/VMwareInstall3.jpg" alt="安装3"><br>5.点击完成即可。<br>6.运行 可以看到以下界面即安装完成：<br><img src="VMware/over.jpg" alt="界面">  </p>
+<h2 id="创建新的虚拟机"><a href="#创建新的虚拟机" class="headerlink" title="创建新的虚拟机"></a>创建新的虚拟机</h2><p>1.打开VMware Workstation点击创建新的虚拟机  选择自定义点击下一步：<br>典型的虚拟机大部分是系统默认选项我们没法改，<br>你如果只是为了单纯创建个虚拟机不做其他用途可以选择典型 此处我们选择自定义<br><img src="VMware/create1.png" alt="创建1"><br>2 选择安装虚拟机的版本 点击下一步<br><img src="VMware/create2.png" alt="创建2"><br>3 选择稍后安装操作系统 点击下一步<br><img src="VMware/create3.png" alt="创建3"><br>4  客户机系统选择Linux  版本我们选择安装的Ubantu 64位<br>（按照电脑自身配置选择64或者32位）一般向下兼容<br><img src="VMware/create4.png" alt="创建4"><br>5 虚拟名称 可以随便选择<br>位置最好创建一个新的文件夹存放虚拟机对应文件存储目录 也可以直接默认<br><img src="VMware/create5.png" alt="创建5"><br>6 处理器这个根据你电脑情况来选<br>如果你的电脑是八核你可以选2核或4核<br>如果你处理器是四核你可以选1核或2核<br>只要不超过你电脑本身核数就行，超过了你的虚拟机就可能启动不起来<br>演示就直接默认选择了<br><img src="VMware/create6.png" alt="创建6"><br>7 虚拟机内存这个也是根据你电脑自身情况来选<br>最好按推荐来，如果虚拟机内存过高会影响你电脑流畅性 够用就好<br><img src="VMware/create7.png" alt="创建7"><br>8 可以上网 选择桥接网络或者net模式，演示选择使用桥接网络<br><img src="VMware/create8.png" alt="创建8"><br>9 IO控制器类型和磁盘类型推荐默认即可 下一步<br><img src="VMware/create9.png" alt="创建9"><br><img src="VMware/create10.png" alt="创建10"><br> 10 选择创建新磁盘<br><img src="VMware/create11.png" alt="创建11"><br>  磁盘大小只是我们给定的空间，后面进行分区时才是它的真实大小<br>  不能太小，太小系统就装不上了，默认分配20G即可<br>  选择拆分多个文件。<br><img src="VMware/create12.png" alt="创建12"><br> 11 储存磁盘位置 自己选择<br><img src="VMware/create13.png" alt="创建13"><br>12 点击自定义硬件 并在CD/DVD 处选择使用ISO映像文件<br><img src="VMware/create14.png" alt="创建14"><br>此处 把开头下载好的ISO文件选中 添加即可<br><img src="VMware/create15.png" alt="创建15"><br> 完成！</p>
+<h1 id="Linux系统安装"><a href="#Linux系统安装" class="headerlink" title="Linux系统安装"></a>Linux系统安装</h1><p>1 点击开启虚拟机 点击Install Ubantu即可<br><img src="VMware/last1.png" alt="系统1"><br>2 直接点击继续即可 下同<br><img src="VMware/last2.png" alt="系统2"><br><img src="VMware/last3.png" alt="系统3">    </p>
+<p>3 选择所在地区 此处选择上海就行<br><img src="VMware/last4.png" alt="系统4">  </p>
+<p>4 选择键盘的文字 英语最好 当然觉得别扭的话可以选择中文<br><img src="VMware/last5.png" alt="系统5">  </p>
+<p>5 在此处设置你的用户名和密码 下面可以选择自动登录和每次输入密码登录<br>  觉得麻烦可以选第一个自动登录<br><img src="VMware/last6.png" alt="系统6"><br> 重启即可完成安装系统</p>
+<h2 id="到此结束啦-这么多图-你的虚拟机装好了吗"><a href="#到此结束啦-这么多图-你的虚拟机装好了吗" class="headerlink" title="到此结束啦  这么多图  你的虚拟机装好了吗"></a>到此结束啦  这么多图  你的虚拟机装好了吗</h2>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/13/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ccancle" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_41928979" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-csdn"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3457742584" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小记："><span class="nav-number">1.</span> <span class="nav-text">小记：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装环境"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机的下载："><span class="nav-number">3.</span> <span class="nav-text">虚拟机的下载：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机的安装："><span class="nav-number">4.</span> <span class="nav-text">虚拟机的安装：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的虚拟机"><span class="nav-number">5.</span> <span class="nav-text">创建新的虚拟机</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux系统安装"><span class="nav-number"></span> <span class="nav-text">Linux系统安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#到此结束啦-这么多图-你的虚拟机装好了吗"><span class="nav-number">1.</span> <span class="nav-text">到此结束啦  这么多图  你的虚拟机装好了吗</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
