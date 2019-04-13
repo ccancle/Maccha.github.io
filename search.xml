@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>VMwareInstall</title>
-      <link href="/2019/04/13/VMwareInstall/"/>
-      <url>/2019/04/13/VMwareInstall/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/04/13/hello-world/"/>
-      <url>/2019/04/13/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[Windows下使用VMware安装Ubantu虚拟机实操记录]]></title>
+    <url>%2F2019%2F04%2F13%2FVMwareInstall%2F</url>
+    <content type="text"><![CDATA[小记：刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程此篇记录内容包括： 安装VMware 创建虚拟机 虚拟机上Ubantu系统的安装 详见下文： 安装环境windows操作系统物理机VMware Workstation 软件（可以在网上下载）Ubantu-14.04.6镜像文件（其他版本都大同小异，这里以Ubantu14.04为例）另外一点外网原因可能网站上下载的有些慢 提供一下我的下载地址,还是蛮快的:http://mirrors.aliyun.com/ubuntu-releases/14.04/里面有各种不同的版本 虚拟机的下载：1.进入VMware官网，点击下载，再点击图中标记的Workstation Pro，如下图所示。 2.根据操作系统选择合适的产品，在这里以Windows系统为例，点击转至下载，如下图所示 3.在1处可以选择版本，默认为最新版本。选择好版本后点击立即下载，下载速度很慢的话，建议科学上网一下。 虚拟机的安装：1.打开.exe文件， 即可开始安装。(因为我已经安装过了所以此处选了一个文件包里的汉化版进行演示，还是建议选用原版) 2.安装位置默认在C盘下，在这里我选择安装在F盘，安装路径尽量不要有中文。 3.等待安装就好了。 4.安装成功后，第一次运行程序会让输入密钥，这个自己百度，分享一下我搜的密钥 有能用的可以用一下：CG54H-D8D0H-H8DHY-C6X7X-N2KG6ZC3WK-AFXEK-488JP-A7MQX-XL8YFAC5XK-0ZD4H-088HP-9NQZV-ZG2R4ZC5XK-A6E0M-080XQ-04ZZG-YF08DZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8FF590-2DX83-M81LZ-XDM7E-MKUT4FF31K-AHZD1-H8ETZ-8WWEZ-WUUVACV7T2-6WY5Q-48EWP-ZXY7X-QGUWDAALYG-20HVE-WHQ13-67MUP-XVMF35.点击完成即可。6.运行 可以看到以下界面即安装完成： 创建新的虚拟机1.打开VMware Workstation点击创建新的虚拟机 选择自定义点击下一步：典型的虚拟机大部分是系统默认选项我们没法改，你如果只是为了单纯创建个虚拟机不做其他用途可以选择典型 此处我们选择自定义2 选择安装虚拟机的版本 点击下一步3 选择稍后安装操作系统 点击下一步4 客户机系统选择Linux 版本我们选择安装的Ubantu 64位（按照电脑自身配置选择64或者32位）一般向下兼容5 虚拟名称 可以随便选择位置最好创建一个新的文件夹存放虚拟机对应文件存储目录 也可以直接默认6 处理器这个根据你电脑情况来选如果你的电脑是八核你可以选2核或4核如果你处理器是四核你可以选1核或2核只要不超过你电脑本身核数就行，超过了你的虚拟机就可能启动不起来演示就直接默认选择了7 虚拟机内存这个也是根据你电脑自身情况来选最好按推荐来，如果虚拟机内存过高会影响你电脑流畅性 够用就好8 可以上网 选择桥接网络或者net模式，演示选择使用桥接网络9 IO控制器类型和磁盘类型推荐默认即可 下一步 10 选择创建新磁盘 磁盘大小只是我们给定的空间，后面进行分区时才是它的真实大小 不能太小，太小系统就装不上了，默认分配20G即可 选择拆分多个文件。 11 储存磁盘位置 自己选择12 点击自定义硬件 并在CD/DVD 处选择使用ISO映像文件此处 把开头下载好的ISO文件选中 添加即可 完成！ Linux系统安装1 点击开启虚拟机 点击Install Ubantu即可2 直接点击继续即可 下同 3 选择所在地区 此处选择上海就行 4 选择键盘的文字 英语最好 当然觉得别扭的话可以选择中文 5 在此处设置你的用户名和密码 下面可以选择自动登录和每次输入密码登录 觉得麻烦可以选第一个自动登录 重启即可完成安装系统 到此结束啦 这么多图 你的虚拟机装好了吗]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F04%2F13%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
 </search>
