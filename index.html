@@ -369,23 +369,18 @@
 
       
         
-          
-            <h2 id="小记："><a href="#小记：" class="headerlink" title="小记："></a>小记：</h2><p>刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程<br>此篇记录内容包括：</p>
+          <h2 id="小记："><a href="#小记：" class="headerlink" title="小记："></a>小记：</h2><p>刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程<br>此篇记录内容包括：</p>
 <p>   安装VMware    </p>
 <p>   创建虚拟机</p>
 <p>   虚拟机上Ubantu系统的安装</p>
-<p>详见下文：  </p>
-<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>windows操作系统物理机<br>VMware Workstation 软件（可以在网上下载）<br>Ubantu-14.04.6镜像文件（其他版本都大同小异，这里以Ubantu14.04为例）<br>另外一点外网原因可能网站上下载的有些慢 提供一下我的下载地址,还是蛮快的:<br><a href="http://mirrors.aliyun.com/ubuntu-releases/14.04/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu-releases/14.04/</a><br>里面有各种不同的版本   </p>
-<h2 id="虚拟机的下载："><a href="#虚拟机的下载：" class="headerlink" title="虚拟机的下载："></a>虚拟机的下载：</h2><p>1.进入<a href="https://www.vmware.com/cn.html" target="_blank" rel="noopener">VMware</a>官网，点击下载，再点击图中标记的Workstation Pro，如下图所示。<br>  <img src="VMwareInstall/download1.png" alt="下载1"><br>2.根据操作系统选择合适的产品，在这里以Windows系统为例，点击转至下载，如下图所示<br>  <img src="VMwareInstall/download2.jpg" alt="下载2"><br>3.在1处可以选择版本，默认为最新版本。选择好版本后点击立即下载，下载速度很慢的话，建议科学上网一下。<br>  <img src="VMwareInstall/download3.png" alt="下载3"></p>
-<h2 id="虚拟机的安装："><a href="#虚拟机的安装：" class="headerlink" title="虚拟机的安装："></a>虚拟机的安装：</h2><p>1.打开.exe文件， 即可开始安装。<br>(因为我已经安装过了所以此处选了一个文件包里的汉化版进行演示，还是建议选用原版)<br>  <img src="VMwareInstall/VMwareInstall1.png" alt="安装1"><br> 2.安装位置默认在C盘下，在这里我选择安装在F盘，安装路径尽量不要有中文。<br>  <img src="VMwareInstall/VMwareInstall2.png" alt="安装2"><br>3.等待安装就好了。   </p>
-<p>4.安装成功后，第一次运行程序会让输入密钥，这个自己百度，分享一下我搜的密钥 有能用的可以用一下：<br>CG54H-D8D0H-H8DHY-C6X7X-N2KG6<br>ZC3WK-AFXEK-488JP-A7MQX-XL8YF<br>AC5XK-0ZD4H-088HP-9NQZV-ZG2R4<br>ZC5XK-A6E0M-080XQ-04ZZG-YF08D<br>ZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8<br>FF590-2DX83-M81LZ-XDM7E-MKUT4<br>FF31K-AHZD1-H8ETZ-8WWEZ-WUUVA<br>CV7T2-6WY5Q-48EWP-ZXY7X-QGUWD<br>AALYG-20HVE-WHQ13-67MUP-XVMF3<br><img src="VMwareInstall/VMwareInstall3.jpg" alt="安装3"><br>5.点击完成即可。<br>6.运行 可以看到以下界面即安装完成：<br><img src="VMwareInstall/over.jpg" alt="界面">  </p>
-<h2 id="创建新的虚拟机"><a href="#创建新的虚拟机" class="headerlink" title="创建新的虚拟机"></a>创建新的虚拟机</h2><p>1.打开VMware Workstation点击创建新的虚拟机  选择自定义点击下一步：<br>典型的虚拟机大部分是系统默认选项我们没法改，<br>你如果只是为了单纯创建个虚拟机不做其他用途可以选择典型 此处我们选择自定义<br><img src="VMwareInstall/create1.png" alt="创建1"><br>2 选择安装虚拟机的版本 点击下一步<br><img src="VMwareInstall/create2.png" alt="创建2"><br>3 选择稍后安装操作系统 点击下一步<br><img src="VMwareInstall/create3.png" alt="创建3"><br>4  客户机系统选择Linux  版本我们选择安装的Ubantu 64位<br>（按照电脑自身配置选择64或者32位）一般向下兼容<br><img src="VMwareInstall/create4.png" alt="创建4"><br>5 虚拟名称 可以随便选择<br>位置最好创建一个新的文件夹存放虚拟机对应文件存储目录 也可以直接默认<br><img src="VMwareInstall/create5.png" alt="创建5"><br>6 处理器这个根据你电脑情况来选<br>如果你的电脑是八核你可以选2核或4核<br>如果你处理器是四核你可以选1核或2核<br>只要不超过你电脑本身核数就行，超过了你的虚拟机就可能启动不起来<br>演示就直接默认选择了<br><img src="VMwareInstall/create6.png" alt="创建6"><br>7 虚拟机内存这个也是根据你电脑自身情况来选<br>最好按推荐来，如果虚拟机内存过高会影响你电脑流畅性 够用就好<br><img src="VMwareInstall/create7.png" alt="创建7"><br>8 可以上网 选择桥接网络或者net模式，演示选择使用桥接网络<br><img src="VMwareInstall/create8.png" alt="创建8"><br>9 IO控制器类型和磁盘类型推荐默认即可 下一步<br><img src="VMwareInstall/create9.png" alt="创建9"><br><img src="VMwareInstall/create10.png" alt="创建10"><br> 10 选择创建新磁盘<br><img src="VMwareInstall/create11.png" alt="创建11"><br>  磁盘大小只是我们给定的空间，后面进行分区时才是它的真实大小<br>  不能太小，太小系统就装不上了，默认分配20G即可<br>  选择拆分多个文件。<br><img src="VMwareInstall/create12.png" alt="创建12"><br> 11 储存磁盘位置 自己选择<br><img src="VMwareInstall/create13.png" alt="创建13"><br>12 点击自定义硬件 并在CD/DVD 处选择使用ISO映像文件<br><img src="VMwareInstall/create14.png" alt="创建14"><br>此处 把开头下载好的ISO文件选中 添加即可<br><img src="VMwareInstall/create15.png" alt="创建15"><br> 完成！</p>
-<h1 id="Linux系统安装"><a href="#Linux系统安装" class="headerlink" title="Linux系统安装"></a>Linux系统安装</h1><p>1 点击开启虚拟机 点击Install Ubantu即可<br><img src="VMwareInstall/last1.png" alt="系统1"><br>2 直接点击继续即可 下同<br><img src="VMwareInstall/last2.png" alt="系统2"><br><img src="VMwareInstall/last3.png" alt="系统3">    </p>
-<p>3 选择所在地区 此处选择上海就行<br><img src="VMwareInstall/last4.png" alt="系统4">  </p>
-<p>4 选择键盘的文字 英语最好 当然觉得别扭的话可以选择中文<br><img src="VMwareInstall/last5.png" alt="系统5">  </p>
-<p>5 在此处设置你的用户名和密码 下面可以选择自动登录和每次输入密码登录<br>  觉得麻烦可以选第一个自动登录<br><img src="VMwareInstall/last6.png" alt="系统6"><br> 重启即可完成安装系统</p>
-<h2 id="到此结束啦-这么多图-你的虚拟机装好了吗"><a href="#到此结束啦-这么多图-你的虚拟机装好了吗" class="headerlink" title="到此结束啦  这么多图  你的虚拟机装好了吗"></a>到此结束啦  这么多图  你的虚拟机装好了吗</h2>
-          
+<p>详见下文：<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/13/VMwareInstall/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -503,18 +498,16 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/13/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
