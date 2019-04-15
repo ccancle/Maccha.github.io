@@ -94,16 +94,15 @@
 <meta property="og:site_name" content="来日可期">
 <meta property="og:description" content="这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过今天问了问同学 查了一下资料 开始补坑记录一下Java String类里面的一个方法理解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/images/illustration/Java-intern.jpg">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo1.png">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo2.png">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo3.png">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo4.png">
-<meta property="og:updated_time" content="2019-04-15T10:05:30.237Z">
+<meta property="og:updated_time" content="2019-04-15T10:17:09.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String 之 intern()方法的测试分析">
 <meta name="twitter:description" content="这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过今天问了问同学 查了一下资料 开始补坑记录一下Java String类里面的一个方法理解">
-<meta name="twitter:image" content="http://macchac.com/2019/04/15/Java-intern/images/illustration/Java-intern.jpg">
+<meta name="twitter:image" content="http://macchac.com/2019/04/15/Java-intern/demo1.png">
 
 
 
@@ -442,7 +441,7 @@
       
         <p class="description"><br>这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过<br>今天问了问同学 查了一下资料 开始补坑<br>记录一下Java String类里面的一个方法理解<br></p>
 
-<p><img src="/2019/04/15/Java-intern/images/illustration/Java-intern.jpg" alt style="width:50%"></p>
+
 <a id="more"></a>
 <h2 id="new-String-amp-String"><a href="#new-String-amp-String" class="headerlink" title="new String() &amp; String"></a>new String() &amp; String</h2><h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">"maccha"</span>);</span><br></pre></td></tr></table></figure>
 <p>定义了几个对象<br><em>回答：若常量池中已经存在 “maccha”，则直接引用，也就是此时只会创建一个对象，如果常量池中不存在 “maccha”，则先创建后引用，也就是有两个。</em></p>
