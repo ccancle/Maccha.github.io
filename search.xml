@@ -4,9 +4,13 @@
     <title><![CDATA[String 之 intern()方法的测试分析]]></title>
     <url>%2F2019%2F04%2F15%2FJava-intern%2F</url>
     <content type="text"><![CDATA[小记这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过今天问了问同学 查了一下资料 开始补坑记录一下Java String类里面的一个方法理解 定义：语法1public String intern() 返回值一个字符串，内容与此字符串相同，但一定取自具有唯一字符串的池。 思考1String s = new String("maccha"); 定义了几个对象回答：若常量池中已经存在 “maccha”，则直接引用，也就是此时只会创建一个对象，如果常量池中不存在 “maccha”，则先创建后引用，也就是有两个。 String str=”maccha”；Stringstr=new String (“maccha”);的区别：在这里，先说下”常量池”概念。常量池(constant pool) 指的是在编译期被确定，并被保存在已编译的.class文件中的一些数据。它包括了关于类、 法、接口等中的常量，也包括字符串常量。Test1：12345String a0 = "maccha"; String a1 = "maccha"; String a2 = "mac"+"cha";System.out.println(a0==a1);System.out.println(a0==a2); 结果为：首先，我们要知道Java会确保一个字符串常量只有一个拷贝。因为例子中的s0和s1中的”maccha”都是字符串常量，它们在编译期就确定了，所以s0==s1为true；而”mac”和”cha”也都是字符串常量，当一个字符串由多个字符串常量连接而成时，自己肯定也是字符串常量，所以s2也同样在编译期就被解析为一个字符串常量，所以s2也是常量池中”maccha”的一个引用。我们得出s0==s1==s2;用new创建的字符串不是常量，不能在编译期就确定，所以new String() 创建的字符串不放入常量池中，它们有自己的地址空间。 Test2：1234567String s0 = "maccha";String s1 = new String("maccha");String s2 = "mac"+new String ("cha");System.out.println(s0 == s1);System.out.println(s0 == s2);System.out.println(s1 == s2); 结果为：例2中s0还是常量池中”maccha”的引用s1因为无法在编译期确定，所以是运行时创建的新对象”maccha”的引用s2因为有后半部分new String(“cha”)所以也无法在编译期确定，也是一个新创建对象”maccha”的应用 String.intern()：存在于.class文件中的常量池，在运行期被JVM装载，并且可以扩充。就是JVM书中所说的运行时常量池String的intern()方法就是扩充常量池的最常见的方法运用 当一个String实例str调用intern()方法时，Java查找常量池中是否有相同Unicode的字符串常量如果有，则返回其的引用，如果没有，则在常量池中增加一个Unicode等于str的字符串并返回它的引用 Test3：1234567891011121314String s0= "maccha";String s1= new String("maccha");String s2= new String("maccha");System.out.println(s0==s1 );System.out.println("---------------------");s1.intern();s2=s2.intern(); //把常量池中“maccha”的引用赋给s2System.out.println(s0==s1);System.out.println(s0==s1.intern() );System.out.println(s0==s2 ); 结果为： 看例4：1234567//不声名"maccha"常量String s1=new String("maccha");String s2=s1.intern();System.out.println(s1==s1.intern() );System.out.println(s1+" "+s2 );System.out.println(s2==s1.intern() ); 结果：在这个类中我们没有声名一个”maccha”常量常量池中最初是没有”maccha”的当我们调用s1.intern()后就在常量池中新添加了一个”maccha”常量原来的不在常量池中的”maccha”仍然存在，所以并不是 如果在表中没有相同值的字符串,将自己的地址注册到常量池中 s1==s1.intern()为false说明原来的“maccha”仍然存在；s2现在为常量池中“maccha”的地址，所以有s2==s1.intern()为true。 查资料时发现有好多讲的挺细致的收货不小,下面是查资料时的的详细介绍:String 之 new String（）和 intern（）方法深入分析]]></content>
+      <categories>
+        <category>Java</category>
+        <category>String类</category>
+      </categories>
       <tags>
         <tag>Java</tag>
-        <tag>基础</tag>
+        <tag>语言基础</tag>
       </tags>
   </entry>
   <entry>
