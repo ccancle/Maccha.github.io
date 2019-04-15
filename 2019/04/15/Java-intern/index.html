@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo2.png">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo3.png">
 <meta property="og:image" content="http://macchac.com/2019/04/15/Java-intern/demo4.png">
-<meta property="og:updated_time" content="2019-04-15T05:54:33.031Z">
+<meta property="og:updated_time" content="2019-04-15T08:01:33.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String 之 intern()方法的测试分析">
 <meta name="twitter:description" content="小记这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过今天问了问同学 查了一下资料 开始补坑记录一下Java String类里面的一个方法理解">
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  998
+                  994
                 </span>
               
 
@@ -427,7 +427,7 @@
 <p>如果在表中没有相同值的字符串,将自己的地址注册到常量池中</p>
 </blockquote>
 <p>s1==s1.intern()为false说明原来的“maccha”仍然存在；<br>s2现在为常量池中“maccha”的地址，所以有s2==s1.intern()为true。</p>
-<p>查资料时发现有好多讲的挺细致的<br>收货不小,下面是查资料时的的详细介绍:<br><a href="https://blog.csdn.net/liupeifeng3514/article/details/81067150" target="_blank" rel="noopener">源码学习 | String 之 new String（）和 intern（）方法深入分析</a></p>
+<p>查资料时发现有好多讲的挺细致的<br>收货不小,下面是查资料时的的详细介绍:<br><a href="https://blog.csdn.net/qq_41928979/article/details/89313835" target="_blank" rel="noopener">String 之 new String（）和 intern（）方法深入分析</a></p>
 
       
     </div>
