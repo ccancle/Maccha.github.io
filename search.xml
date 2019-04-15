@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[String 之 intern()方法的测试分析]]></title>
+    <url>%2F2019%2F04%2F15%2FJava-intern%2F</url>
+    <content type="text"><![CDATA[小记这两天从新开始看深入理解Java虚拟机那本书了 但看到虚拟机数据区的关系时发现，之前String里面的intern方法知识点有点模糊 以前也没细看过今天问了问同学 查了一下资料 开始补坑记录一下Java String类里面的一个方法理解 定义：语法1public String intern() 返回值一个字符串，内容与此字符串相同，但一定取自具有唯一字符串的池。 思考1String s = new String("maccha"); 定义了几个对象回答：若常量池中已经存在 “maccha”，则直接引用，也就是此时只会创建一个对象，如果常量池中不存在 “maccha”，则先创建后引用，也就是有两个。 String str=”maccha”；Stringstr=new String (“maccha”);的区别：在这里，先说下”常量池”概念。常量池(constant pool) 指的是在编译期被确定，并被保存在已编译的.class文件中的一些数据。它包括了关于类、 法、接口等中的常量，也包括字符串常量。Test1：12345String a0 = "maccha"; String a1 = "maccha"; String a2 = "mac"+"cha";System.out.println(a0==a1);System.out.println(a0==a2); 结果为：首先，我们要知道Java会确保一个字符串常量只有一个拷贝。因为例子中的s0和s1中的”maccha”都是字符串常量，它们在编译期就确定了，所以s0==s1为true；而”mac”和”cha”也都是字符串常量，当一个字符串由多个字符串常量连接而成时，自己肯定也是字符串常量，所以s2也同样在编译期就被解析为一个字符串常量，所以s2也是常量池中”maccha”的一个引用。我们得出s0==s1==s2;用new创建的字符串不是常量，不能在编译期就确定，所以new String() 创建的字符串不放入常量池中，它们有自己的地址空间。 Test2：1234567String s0 = "maccha";String s1 = new String("maccha");String s2 = "mac"+new String ("cha");System.out.println(s0 == s1);System.out.println(s0 == s2);System.out.println(s1 == s2); 结果为：例2中s0还是常量池中”maccha”的引用s1因为无法在编译期确定，所以是运行时创建的新对象”maccha”的引用s2因为有后半部分new String(“cha”)所以也无法在编译期确定，也是一个新创建对象”maccha”的应用 String.intern()：存在于.class文件中的常量池，在运行期被JVM装载，并且可以扩充。就是JVM书中所说的运行时常量池String的intern()方法就是扩充常量池的最常见的方法运用 当一个String实例str调用intern()方法时，Java查找常量池中是否有相同Unicode的字符串常量如果有，则返回其的引用，如果没有，则在常量池中增加一个Unicode等于str的字符串并返回它的引用 Test3：1234567891011121314String s0= "maccha";String s1= new String("maccha");String s2= new String("maccha");System.out.println(s0==s1 );System.out.println("---------------------");s1.intern();s2=s2.intern(); //把常量池中“maccha”的引用赋给s2System.out.println(s0==s1);System.out.println(s0==s1.intern() );System.out.println(s0==s2 ); 结果为： 看例4：1234567//不声名"maccha"常量String s1=new String("maccha");String s2=s1.intern();System.out.println(s1==s1.intern() );System.out.println(s1+" "+s2 );System.out.println(s2==s1.intern() ); 结果：在这个类中我们没有声名一个”maccha”常量常量池中最初是没有”maccha”的当我们调用s1.intern()后就在常量池中新添加了一个”maccha”常量原来的不在常量池中的”maccha”仍然存在，所以并不是 如果在表中没有相同值的字符串,将自己的地址注册到常量池中 s1==s1.intern()为false说明原来的“maccha”仍然存在；s2现在为常量池中“maccha”的地址，所以有s2==s1.intern()为true。 查资料时发现有好多讲的挺细致的收货不小,下面是查资料时的的详细介绍:源码学习 | String 之 new String（）和 intern（）方法深入分析]]></content>
+      <tags>
+        <tag>Java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Windows下使用VMware安装Ubantu虚拟机实操记录]]></title>
     <url>%2F2019%2F04%2F13%2FVMwareInstall%2F</url>
     <content type="text"><![CDATA[小记：刚刚开通博客 正好刚重新做了一遍实验课 就拿这篇来用Markdown写博客练练手 顺便回忆一下安装虚拟机的过程此篇记录内容包括： 安装VMware 创建虚拟机 虚拟机上Ubantu系统的安装 详见下文： 安装环境windows操作系统物理机VMware Workstation 软件（可以在网上下载）Ubantu-14.04.6镜像文件（其他版本都大同小异，这里以Ubantu14.04为例）另外一点外网原因可能网站上下载的有些慢 提供一下我的下载地址,还是蛮快的:http://mirrors.aliyun.com/ubuntu-releases/14.04/里面有各种不同的版本 虚拟机的下载：1.进入VMware官网，点击下载，再点击图中标记的Workstation Pro，如下图所示。 2.根据操作系统选择合适的产品，在这里以Windows系统为例，点击转至下载，如下图所示 3.在1处可以选择版本，默认为最新版本。选择好版本后点击立即下载，下载速度很慢的话，建议科学上网一下。 虚拟机的安装：1.打开.exe文件， 即可开始安装。(因为我已经安装过了所以此处选了一个文件包里的汉化版进行演示，还是建议选用原版) 2.安装位置默认在C盘下，在这里我选择安装在F盘，安装路径尽量不要有中文。 3.等待安装就好了。 4.安装成功后，第一次运行程序会让输入密钥，这个自己百度，分享一下我搜的密钥 有能用的可以用一下：CG54H-D8D0H-H8DHY-C6X7X-N2KG6ZC3WK-AFXEK-488JP-A7MQX-XL8YFAC5XK-0ZD4H-088HP-9NQZV-ZG2R4ZC5XK-A6E0M-080XQ-04ZZG-YF08DZY5H0-D3Y8K-M89EZ-AYPEG-MYUA8FF590-2DX83-M81LZ-XDM7E-MKUT4FF31K-AHZD1-H8ETZ-8WWEZ-WUUVACV7T2-6WY5Q-48EWP-ZXY7X-QGUWDAALYG-20HVE-WHQ13-67MUP-XVMF35.点击完成即可。6.运行 可以看到以下界面即安装完成： 创建新的虚拟机1.打开VMware Workstation点击创建新的虚拟机 选择自定义点击下一步：典型的虚拟机大部分是系统默认选项我们没法改，你如果只是为了单纯创建个虚拟机不做其他用途可以选择典型 此处我们选择自定义2 选择安装虚拟机的版本 点击下一步3 选择稍后安装操作系统 点击下一步4 客户机系统选择Linux 版本我们选择安装的Ubantu 64位（按照电脑自身配置选择64或者32位）一般向下兼容5 虚拟名称 可以随便选择位置最好创建一个新的文件夹存放虚拟机对应文件存储目录 也可以直接默认6 处理器这个根据你电脑情况来选如果你的电脑是八核你可以选2核或4核如果你处理器是四核你可以选1核或2核只要不超过你电脑本身核数就行，超过了你的虚拟机就可能启动不起来演示就直接默认选择了7 虚拟机内存这个也是根据你电脑自身情况来选最好按推荐来，如果虚拟机内存过高会影响你电脑流畅性 够用就好8 可以上网 选择桥接网络或者net模式，演示选择使用桥接网络9 IO控制器类型和磁盘类型推荐默认即可 下一步 10 选择创建新磁盘 磁盘大小只是我们给定的空间，后面进行分区时才是它的真实大小 不能太小，太小系统就装不上了，默认分配20G即可 选择拆分多个文件。 11 储存磁盘位置 自己选择12 点击自定义硬件 并在CD/DVD 处选择使用ISO映像文件此处 把开头下载好的ISO文件选中 添加即可 完成！ Linux系统安装1 点击开启虚拟机 点击Install Ubantu即可2 直接点击继续即可 下同 3 选择所在地区 此处选择上海就行 4 选择键盘的文字 英语最好 当然觉得别扭的话可以选择中文 5 在此处设置你的用户名和密码 下面可以选择自动登录和每次输入密码登录 觉得麻烦可以选第一个自动登录 重启即可完成安装系统 到此结束啦 这么多图 你的虚拟机装好了吗]]></content>
       <tags>
-        <tag>Linux</tag>
         <tag>基础</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
