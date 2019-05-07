@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[JDBC-reflex]]></title>
-    <url>%2F2019%2F04%2F18%2FJDBC-reflex%2F</url>
-    <content type="text"><![CDATA[## ## ##]]></content>
+    <title><![CDATA[基于TCP/IP的Java网络编程]]></title>
+    <url>%2F2019%2F05%2F07%2FSocket%2F</url>
+    <content type="text"><![CDATA[这学期学的计算机网络这门课 发现确实挺有意思 看完书和试验觉得看Java寄出的时候没有去细看网络编程这一部分，现在了解了网络知识之后回头来补这段java基础本文主要是想记录一下初学计算机网络这门课的一些认识以及写一些用Java语言基于TCP/IP协议编程的实际操作中遇到的一些小坑主要是Java进行编写客户服务器之间的通信 对网络基础只是简单的进行描述 并不会长篇大论初学 理解不深 只是简单的进行了一个小的实验 帮助自己理解 以后再补充 计算机网络基础首先说一下以太网最基本最重要的知识——OSI参考模型 OSI（Open System Interconnect），即开放式系统互联。 一般都叫OSI参考模型，是ISO（国际标准化组织）组织在1985年研究的网络互联模型。该体系结构标准定义了网络互联的七层框架（物理层、数据链路层、网络层、传输层、会话层、表示层和应用层），即OSI开放系统互连参考模型。在这一框架下进一步详细规定了每一层的功能，以实现开放系统环境中的互连性、互操作性和应用的可移植性 简单来说就是推荐所有公司使用这个规范来控制网络，这样所有公司都有相同的规范，就能互联了分七层从下到上分别是：物理层、数据链路层、网络层、传输层、会话层、表示层和应用层但是由于这个模型太理想化 而我们在大多数情况下使用的都是TCP/IP五层模型：应用层 传输层 网络层 链路层 物理层而每一层都有他的主要功能和代表协议 此处不再细说 略见下图： 而此处的Java网络编程（也叫Socket编程）就是使用位于传输层的TCP或者UDP协议进行的之后我们来主要说一下这两个协议 TCP &amp; UDP两者都是位于传输层的协议面向连接的TCP（Transmission Control Protocol，传输控制协议） 1，可靠性：它是基于连接的协议，在正式收发数据前，必须和对方建立可靠的连接。（三次握手）2，拥有拥塞控制 流量控制3，不提供时间 最小吞吐量保证 安全性保证等4，适用于传输要求高的5，TCP进行通信的两个应用进程 客户端服务端 面向非连接的UDP协议 1，不可靠：不需要建立传输连接2，没有拥塞控制，流量控制 吞吐量保证3，发送数据结束时无需释放资源 速度快4，适用于要求不高的少量数据5，每个数据报大小限制在64K之内 Socket由 IP地址和端口号 组成的套接字利用套接字开发应用程序被广泛使用 通信的两端都要有SocketSocket允许程序把网络连接当成一个流 数据可以在两个Socket之间通过IO进行传输一般主动发起通信的应用程序是客户端 等待通信请求的是服务端 网络编程实际上就是Socket编程 Socket编程实例使用Socket进行基于TCP的简单编程原理与IO流输入输出一致 客户端给服务端发送消息 服务端输出信息到控制台上服务器端收到信息后给客户端进行反馈 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100public class TestTCP &#123; //客户端 @Test public void client()&#123; Socket socket = null; OutputStream outputStream = null; InputStream inputStream = null; try &#123; socket = new Socket(InetAddress.getByName("127.0.0.1"),8989); outputStream = socket.getOutputStream(); outputStream.write("I'm Client".getBytes()); socket.shutdownOutput(); inputStream = socket.getInputStream(); byte[] b= new byte[20]; int len; while ((len=inputStream.read(b))!=-1)&#123; String s = new String(b,0,len); System.out.println(s); &#125; &#125; catch (IOException e) &#123; e.printStackTrace(); &#125;finally &#123; if (inputStream!=null)&#123; try &#123; inputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; if (outputStream!=null)&#123; try &#123; outputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; if (socket!=null)&#123; try &#123; socket.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; &#125; &#125; //服务器端 @Test public void server()&#123; ServerSocket serverSocket = null; Socket socket = null; InputStream inputStream = null; OutputStream outputStream =null; try &#123; serverSocket = new ServerSocket(8989); socket = serverSocket.accept(); inputStream = socket.getInputStream(); byte[] b = new byte[20]; int len; while((len = inputStream.read(b))!=-1)&#123; String s = new String(b,0,len); System.out.println(s); &#125; outputStream=socket.getOutputStream(); outputStream.write("I have recieve your message".getBytes()); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125;finally &#123; if (outputStream!=null)&#123; try &#123; outputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; if (inputStream!=null)&#123; try &#123; inputStream.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; if (socket!=null)&#123; try &#123; socket.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; if (serverSocket!=null)&#123; try &#123; serverSocket.close(); &#125; catch (IOException e) &#123; e.printStackTrace(); &#125; &#125; &#125; &#125;&#125; 执行时先启动服务器端 再启动客户端服务器端启动后无任何反馈 等待客户端启动 客户端启动后 两端的显示如下： 服务器端： 客户端： 注意（排坑）一：如程序中所写Socket由IP地址和端口号两部分组成 Socket=IP地址+端口号 二： 因为read()方式是堵塞式的：没有东西进行输入的话就会处于等待 服务器端用read（）接受但是服务端不知道客户端什么时候发送完数据 就一直处于等待 处于堵塞状态下方程序因此无法进行 所以如果发送完数据的话 应该告诉服务端：我已经发送完毕类似于三次握手确认阶段的实现 我第一次写的时候因为没有注意到这一点 导致服务器端接收到了第一次客户端发送到字段但是一直处于运行状态 而客户端没有数据显示 此时需要在发送方写入方法之后加上一行1socket.shutdownOutput(); 用来告诉接收端：”我已经发送完毕” 可以开始接收 三：使用完的Socket IO流等记得在程序中加上关闭语句 防止机器资源浪费 写于计网期中考试完毕的一个反思夜晚 以后再进行补充]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>计算机网络</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[String 之 intern()方法的测试分析]]></title>
@@ -25,6 +32,7 @@
       <tags>
         <tag>Linux</tag>
         <tag>基础</tag>
+        <tag>安装配置</tag>
       </tags>
   </entry>
   <entry>
