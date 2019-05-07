@@ -95,9 +95,10 @@
 <meta property="og:description" content="这学期学的计算机网络这门课 发现确实挺有意思 看完书和试验觉得看Java寄出的时候没有去细看网络编程这一部分，现在了解了网络知识之后回头来补这段java基础本文主要是想记录一下初学计算机网络这门课的一些认识以及写一些用Java语言基于TCP/IP协议编程的实际操作中遇到的一些小坑主要是Java进行编写客户服务器之间的通信 对网络基础只是简单的进行描述 并不会长篇大论初学 理解不深 只是简单的进行了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://macchac.com/2019/05/07/Socket/协议.png">
+<meta property="og:image" content="http://macchac.com/2019/05/07/Socket/Handshake.png">
 <meta property="og:image" content="http://macchac.com/2019/05/07/Socket/Server.png">
 <meta property="og:image" content="http://macchac.com/2019/05/07/Socket/Client.png">
-<meta property="og:updated_time" content="2019-05-07T16:28:26.079Z">
+<meta property="og:updated_time" content="2019-05-07T17:05:59.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于TCP&#x2F;IP的Java网络编程">
 <meta name="twitter:description" content="这学期学的计算机网络这门课 发现确实挺有意思 看完书和试验觉得看Java寄出的时候没有去细看网络编程这一部分，现在了解了网络知识之后回头来补这段java基础本文主要是想记录一下初学计算机网络这门课的一些认识以及写一些用Java语言基于TCP/IP协议编程的实际操作中遇到的一些小坑主要是Java进行编写客户服务器之间的通信 对网络基础只是简单的进行描述 并不会长篇大论初学 理解不深 只是简单的进行了">
@@ -390,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2.5k
                 </span>
               
 
@@ -406,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  9
                 </span>
               
             </div>
@@ -444,6 +445,33 @@
 <blockquote>
 <p>1，不可靠：不需要建立传输连接<br>2，没有拥塞控制，流量控制 吞吐量保证<br>3，发送数据结束时无需释放资源 速度快<br>4，适用于要求不高的少量数据<br>5，每个数据报大小限制在64K之内</p>
 </blockquote>
+<h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><p>TCP在传输之前会进行三次沟通，一般称为“三次握手”，<br>传完数据断开的时候要进行四次沟通，一般称为“四次挥手”<br>此处先只说一下”三次握手”</p>
+<p><strong>先形象化的说一下：</strong></p>
+<blockquote>
+<p>在晚上灯光暗的时候 你看见一个女生迎面走来 你不确定人不认识她：<br>你首先向妹子招手(syn)，妹子看到你向自己招手后，向你点了点头挤出了一个微笑(ack)。你看到妹子微笑后确认了妹子成功辨认出了自己(进入estalished状态)。</p>
+</blockquote>
+<blockquote>
+<p>但是妹子有点不好意思，向四周看了一看，有没有可能你是在看别人呢，她也需要确认一下。妹子也向你招了招手(syn)，你看到妹子向自己招手后知道对方是在寻求自己的确认，于是也点了点头挤出了微笑(ack)，妹子看到对方的微笑后确认了你就是在向自己打招呼(进入established状态)。两个人确认是熟人<br>于是你们打招呼成功。</p>
+</blockquote>
+<p>过程分四个动作：</p>
+<blockquote>
+<p>1，你招手<br>2，女生点头微笑<br>3，女生向你招手<br>4，你点头微笑</p>
+</blockquote>
+<p>2和3合并成一个动作 就形成了三次握手的形象化 其实本质上 三次握手第二次就是一个两个动作的整合 下面我们说一下专业化的语言</p>
+<p><strong>三次握手：</strong><br>第一次：客户机给服务器发送请求连接（此时客户端不知道请求是否发送成功）<br>第二次：服务器给客户端反馈答复(服务端接收到 客户端发送成功进行反馈 服务器不知道自己是否发送成功)<br>第三次：客户端在给服务端反馈（双方都确认可以进行发送和接收）表示可以建立连接<br><strong><font size="4">需要用到的概念</font></strong><br>两个序号：</p>
+<blockquote>
+<p>（1）序号：seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记<br>（2）确认序号：ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，ack=seq+1。</p>
+</blockquote>
+<p>两个标志位：</p>
+<blockquote>
+<p>（A）ACK：确认序号有效。<br>（B）SYN：发起一个新连接。</p>
+</blockquote>
+<p>需要注意的是：<br>  （A）不要将确认序号ack与标志位中的ACK搞混了。<br>  （B）确认方ack=发起方req+1，两端配对。</p>
+<p>主要过程：</p>
+<blockquote>
+<p>（1）第一次握手：Client将标志位SYN置为1，<br>随机产生一个值seq=X(就是客户端的数据初始地址)  并将该数据包发送给Server  Client进入SYN_SENT状态    等待Server确认。<br>（2）第二次握手：Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=X+1，随机产生一个值seq=Y(就是服务器端划分出的存储初始地址)，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。<br>（3）第三次握手：Client收到确认后，检查ack是否为X+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=Y+1，并将该数据包发送给Server，Server检查ack是否为Y+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。</p>
+</blockquote>
+<p>过程如下图所示：<br><img src="/2019/05/07/Socket/Handshake.png" alt="Handshake"></p>
 <h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><p>由 <strong><font color="FA8072">IP地址和端口号</font></strong> 组成的套接字<br>利用套接字开发应用程序被广泛使用  通信的两端都要有Socket<br>Socket允许程序把网络连接当成一个流 数据可以在两个Socket之间通过IO进行传输<br>一般主动发起通信的应用程序是<strong><font color="FA8072">客户端</font></strong> 等待通信请求的是<strong><font color="FA8072">服务端</font></strong></p>
 <p><strong>网络编程实际上就是Socket编程</strong></p>
 <h2 id="Socket编程实例"><a href="#Socket编程实例" class="headerlink" title="Socket编程实例"></a>Socket编程实例</h2><p>使用Socket进行基于TCP的简单编程<br>原理与IO流输入输出一致</p>
@@ -687,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络基础"><span class="nav-number">1.</span> <span class="nav-text">计算机网络基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-amp-UDP"><span class="nav-number">2.</span> <span class="nav-text">TCP &amp; UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket"><span class="nav-number">3.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket编程实例"><span class="nav-number">4.</span> <span class="nav-text">Socket编程实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意（排坑）"><span class="nav-number">5.</span> <span class="nav-text">注意（排坑）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机网络基础"><span class="nav-number">1.</span> <span class="nav-text">计算机网络基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-amp-UDP"><span class="nav-number">2.</span> <span class="nav-text">TCP &amp; UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">3.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket"><span class="nav-number">4.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket编程实例"><span class="nav-number">5.</span> <span class="nav-text">Socket编程实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意（排坑）"><span class="nav-number">6.</span> <span class="nav-text">注意（排坑）</span></a></li></ol></div>
             
 
           </div>
@@ -725,7 +753,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.8k
+    <span title="Site words total count">4.7k
       
     </span>
   
