@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="后端,基础,">
 
 
 
@@ -86,16 +86,26 @@
 
 
 
-<meta name="description" content="来自天理的一位小学弟的脱坑之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="来日可期">
-<meta property="og:url" content="http://macchac.com/categories/Java/index.html">
+<meta name="description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
+<meta name="keywords" content="后端,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat安装配置">
+<meta property="og:url" content="http://macchac.com/2019/05/12/TomcatInstall/index.html">
 <meta property="og:site_name" content="来日可期">
-<meta property="og:description" content="来自天理的一位小学弟的脱坑之路">
+<meta property="og:description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/1.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/4.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/5.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/6.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/8.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/7.png">
+<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/9.png">
+<meta property="og:updated_time" content="2019-05-12T10:20:15.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来日可期">
-<meta name="twitter:description" content="来自天理的一位小学弟的脱坑之路">
+<meta name="twitter:title" content="Tomcat安装配置">
+<meta name="twitter:description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
+<meta name="twitter:image" content="http://macchac.com/2019/05/12/TomcatInstall/1.png">
 
 
 
@@ -125,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://macchac.com/categories/Java/">
+  <link rel="canonical" href="http://macchac.com/2019/05/12/TomcatInstall/">
 
 
 
 
 
-  <title>分类: Java | 来日可期</title>
+  <title>Tomcat安装配置 | 来日可期</title>
   
 
 
@@ -150,7 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/ccancle" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -287,105 +297,230 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Java<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://macchac.com/2019/05/12/TomcatInstall/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maccha">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="来日可期">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/12/TomcatInstall/" itemprop="url">
-              
-                <span itemprop="name">Tomcat安装配置</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Tomcat安装配置</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-12T17:21:25+08:00" content="2019-05-12">
-          05-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-12T17:21:25+08:00">
+                2019-05-12
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  484
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/07/Socket/" itemprop="url">
-              
-                <span itemprop="name">基于TCP/IP的Java网络编程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-07T21:07:55+08:00" content="2019-05-07">
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <p class="description"><br>简单讲解Tomcat的安装配置 以及目录结构 用户设置等<br></p>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/15/Java-intern/" itemprop="url">
-              
-                <span itemprop="name">String 之 intern()方法的测试分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-15T13:11:04+08:00" content="2019-04-15">
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<a id="more"></a>
+<p>简介：<br>Tomcat 是一个免费的开放源代码的 Servlet 容器</p>
+<h2 id="下载安装："><a href="#下载安装：" class="headerlink" title="下载安装："></a>下载安装：</h2><p>在<a href="https://tomcat.apache.org" target="_blank" rel="noopener">Tomcat官网</a>  Download处选择版本进行下载 此处选择Windows下64位的压缩包<br>  <img src="/2019/05/12/TomcatInstall/1.png" alt="下载1"><br>解压到目录文件之后 根据路径信息添加环境变量，进入计算机属性设置—&gt;高级系统设置—&gt;环境变量 添加</p>
+<blockquote>
+<p>变量名：CATALINA_HOME<br>变量值：你自己的安装路径</p>
+</blockquote>
+<blockquote>
+<p>变量名：TOMCAT_HOME<br>变量值：你自己的安装路径</p>
+</blockquote>
+<p>同时在系统变量Path中添加</p>
+<blockquote>
+<p>%CATALINA_HOME%\lib<br>%TOMCAT_HOME%\bin<br><img src="/2019/05/12/TomcatInstall/4.png" alt="下载2"></p>
+</blockquote>
+<p>有时候出现问题 也可以直接添加所安装的Tomcat路径下的bin目录地址：（二选一）<br><img src="/2019/05/12/TomcatInstall/5.png" alt="下载2"></p>
+<p>尝试启动Tomcat：<br>打开命令行  输入：</p>
+<blockquote>
+<p>startup</p>
+</blockquote>
+<p>之后 打开浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">localhost:8080</a>看见欢迎界面表示配置成功<br><img src="/2019/05/12/TomcatInstall/6.png" alt="下载2"></p>
+<h2 id="Tomcat-的目录结构"><a href="#Tomcat-的目录结构" class="headerlink" title="Tomcat 的目录结构"></a>Tomcat 的目录结构</h2><p>打开Tomcat安装路径 可以看到下面的结构<br><img src="/2019/05/12/TomcatInstall/8.png" alt="下载2"></p>
+<blockquote>
+<p>bin –&gt;启动和关闭 Tomcat 的脚本文件<br>conf  –&gt; 服务器的各种配置文件<br>lib   –&gt; 服务器和所有 web 应用程序需要访问的 jar 文件<br>logs  –&gt;日志文件<br>temp  –&gt;运行时产生的临时文件<br>webapps –&gt;发布 web 应用程序时，web 应用程序的目录及文件<br>work    –&gt;JSP 生成的 Servlet 源文件和字节码文件</p>
+</blockquote>
+<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><p>Tomcat Manager的用户配置在 Tomcat安装目录/conf/tomcat-users.xml文件中进行管理<br><img src="/2019/05/12/TomcatInstall/7.png" alt="下载2"><br>一个user节点表示单个用户，属性username和password分别表示登录的用户名和密码，属性roles 表示该用户所具备的权限<br>添加用户时根据上面的格式更改自己的用户名密码即可 其他的不必修改</p>
+<p>添加完成后再次启动Tomcat时 访问主页 输入用户名密码后即可进入自己的项目管理界面<br><img src="/2019/05/12/TomcatInstall/9.png" alt="下载2"></p>
+<hr>
 
       
     </div>
+    
+    
+    
 
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/后端/" rel="tag"># 后端</a>
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/07/Socket/" rel="next" title="基于TCP/IP的Java网络编程">
+                <i class="fa fa-chevron-left"></i> 基于TCP/IP的Java网络编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -393,6 +528,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -413,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -520,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装："><span class="nav-number">1.</span> <span class="nav-text">下载安装：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat-的目录结构"><span class="nav-number">2.</span> <span class="nav-text">Tomcat 的目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户信息"><span class="nav-number">3.</span> <span class="nav-text">配置用户信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -704,6 +868,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
