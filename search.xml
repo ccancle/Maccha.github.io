@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>CSAPP_1</title>
+      <link href="/2019/11/04/CSAPP-1/"/>
+      <url>/2019/11/04/CSAPP-1/</url>
+      
+        <content type="html"><![CDATA[<p class="description"></p><p><img src="https://" alt style="width:100%"></p><a id="more"></a><p>这一章首先讲解C语言的版本，对应于不同的GCC命令参数。其次信息的表示是二进制，这就有一个大小端的问题（big endian/little endian），关于这个问题，我用“Intel小不点”表示Intel是小端并且小端是不符合常规的（低位在前，而常规是高位在前）。</p><p>其次介绍了布尔代数，关于异或:x^y=(x&amp;~y)|(~x&amp;y)。紧接着是算术移位和逻辑移位的区别。</p><p>下面就是本章的重点了，关于Unsigned Encoding和Two’s Complement Encoding的讨论，我们一直习惯于认为补码就是原码取反加一，但是这里给出了定义，就是最高位为1代表-2^W，而无符号整数最高位为1代表+2^W，关于他们的加减乘除的转换有一系列的公式，介绍得很详细，有一点最重要的是不管如何赋值其二进制是不变的，赋值给Unsigned int就按无符号整数处理，赋值给Signed int就按二进制补码处理，如何解读与其二进制的1、0组合无关。</p><p>接着是IEEE754浮点数标准、浮点数舍入规则等等的介绍，没有过于深入，有兴趣的读者可以看看组成原理中关于这一部分的介绍。</p><p>##</p><p>##</p><p>##</p><hr>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css</title>
       <link href="/2019/10/29/css/"/>
       <url>/2019/10/29/css/</url>
@@ -60,9 +73,9 @@
       
         <tags>
             
-            <tag> 基础 </tag>
-            
             <tag> 后端 </tag>
+            
+            <tag> 基础 </tag>
             
         </tags>
       
@@ -137,9 +150,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 基础 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> 安装配置 </tag>
             
