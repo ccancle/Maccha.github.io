@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="后端,基础,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -86,26 +86,16 @@
 
 
 
-<meta name="description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
-<meta name="keywords" content="后端,基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tomcat安装配置">
-<meta property="og:url" content="http://macchac.com/2019/05/12/TomcatInstall/index.html">
+<meta property="og:title" content="CSAPP">
+<meta property="og:url" content="http://macchac.com/2019/11/09/CSAPP/index.html">
 <meta property="og:site_name" content="来日可期">
-<meta property="og:description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/1.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/4.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/5.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/6.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/8.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/7.png">
-<meta property="og:image" content="http://macchac.com/2019/05/12/TomcatInstall/9.png">
-<meta property="og:updated_time" content="2019-05-12T10:20:15.883Z">
+<meta property="og:image" content="https:///">
+<meta property="og:updated_time" content="2019-11-08T17:07:41.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tomcat安装配置">
-<meta name="twitter:description" content="简单讲解Tomcat的安装配置 以及目录结构 用户设置等">
-<meta name="twitter:image" content="http://macchac.com/2019/05/12/TomcatInstall/1.png">
+<meta name="twitter:title" content="CSAPP">
+<meta name="twitter:image" content="https:///">
 
 
 
@@ -135,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://macchac.com/2019/05/12/TomcatInstall/">
+  <link rel="canonical" href="http://macchac.com/2019/11/09/CSAPP/">
 
 
 
 
 
-  <title>Tomcat安装配置 | 来日可期</title>
+  <title>CSAPP | 来日可期</title>
   
 
 
@@ -311,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://macchac.com/2019/05/12/TomcatInstall/">
+    <link itemprop="mainEntityOfPage" href="http://macchac.com/2019/11/09/CSAPP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maccha">
@@ -328,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Tomcat安装配置</h1>
+          <h1 class="post-title" itemprop="name headline">CSAPP</h1>
         
 
         <div class="post-meta">
@@ -340,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-12T17:21:25+08:00">
-                2019-05-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-09T01:07:41+08:00">
+                2019-11-09
               </time>
             
 
@@ -350,28 +340,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -394,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  484
+                  0
                 </span>
               
 
@@ -431,33 +399,13 @@
       
 
       
-        <p class="description"><br>简单讲解Tomcat的安装配置 以及目录结构 用户设置等<br></p>
+        <p class="description"></p>
 
+<p><img src="https://" alt style="width:100%"></p>
 <a id="more"></a>
-<p>简介：<br>Tomcat 是一个免费的开放源代码的 Servlet 容器</p>
-<h2 id="下载安装："><a href="#下载安装：" class="headerlink" title="下载安装："></a>下载安装：</h2><p>在<a href="https://tomcat.apache.org" target="_blank" rel="noopener">Tomcat官网</a>  Download处选择版本进行下载 此处选择Windows下64位的压缩包<br>  <img src="/2019/05/12/TomcatInstall/1.png" alt="下载1"><br>解压到目录文件之后 根据路径信息添加环境变量，进入计算机属性设置—&gt;高级系统设置—&gt;环境变量 添加</p>
-<blockquote>
-<p>变量名：CATALINA_HOME<br>变量值：你自己的安装路径</p>
-</blockquote>
-<blockquote>
-<p>变量名：TOMCAT_HOME<br>变量值：你自己的安装路径</p>
-</blockquote>
-<p>同时在系统变量Path中添加</p>
-<blockquote>
-<p>%CATALINA_HOME%\lib<br>%TOMCAT_HOME%\bin<br><img src="/2019/05/12/TomcatInstall/4.png" alt="下载2"></p>
-</blockquote>
-<p>有时候出现问题 也可以直接添加所安装的Tomcat路径下的bin目录地址：（二选一）<br><img src="/2019/05/12/TomcatInstall/5.png" alt="下载2"></p>
-<p>尝试启动Tomcat：<br>打开命令行  输入：</p>
-<blockquote>
-<p>startup</p>
-</blockquote>
-<p>之后 打开浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">localhost:8080</a>看见欢迎界面表示配置成功<br><img src="/2019/05/12/TomcatInstall/6.png" alt="下载2"></p>
-<h2 id="Tomcat-的目录结构"><a href="#Tomcat-的目录结构" class="headerlink" title="Tomcat 的目录结构"></a>Tomcat 的目录结构</h2><p>打开Tomcat安装路径 可以看到下面的结构<br><img src="/2019/05/12/TomcatInstall/8.png" alt="下载2"></p>
-<blockquote>
-<p>bin –&gt;启动和关闭 Tomcat 的脚本文件<br>conf  –&gt; 服务器的各种配置文件<br>lib   –&gt; 服务器和所有 web 应用程序需要访问的 jar 文件<br>logs  –&gt;日志文件<br>temp  –&gt;运行时产生的临时文件<br>webapps –&gt;发布 web 应用程序时，web 应用程序的目录及文件<br>work    –&gt;JSP 生成的 Servlet 源文件和字节码文件</p>
-</blockquote>
-<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><p>Tomcat Manager的用户配置在 Tomcat安装目录/conf/tomcat-users.xml文件中进行管理<br><img src="/2019/05/12/TomcatInstall/7.png" alt="下载2"><br>一个user节点表示单个用户，属性username和password分别表示登录的用户名和密码，属性roles 表示该用户所具备的权限<br>添加用户时根据上面的格式更改自己的用户名密码即可 其他的不必修改</p>
-<p>添加完成后再次启动Tomcat时 访问主页 输入用户名密码后即可进入自己的项目管理界面<br><img src="/2019/05/12/TomcatInstall/9.png" alt="下载2"></p>
+<p>##</p>
+<p>##</p>
+<p>##</p>
 <hr>
 
       
@@ -475,14 +423,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/后端/" rel="tag"># 后端</a>
-          
-            <a href="/tags/基础/" rel="tag"># 基础</a>
-          
-        </div>
-      
 
       
       
@@ -492,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/07/Socket/" rel="next" title="基于TCP/IP的Java网络编程">
-                <i class="fa fa-chevron-left"></i> 基于TCP/IP的Java网络编程
+              <a href="/2019/11/04/CSAPP-1/" rel="next" title="CSAPP_1">
+                <i class="fa fa-chevron-left"></i> CSAPP_1
               </a>
             
           </div>
@@ -501,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/Exercises/" rel="prev" title="错题笔记">
-                错题笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,17 +492,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -672,22 +599,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装："><span class="nav-number">1.</span> <span class="nav-text">下载安装：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat-的目录结构"><span class="nav-number">2.</span> <span class="nav-text">Tomcat 的目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户信息"><span class="nav-number">3.</span> <span class="nav-text">配置用户信息</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
